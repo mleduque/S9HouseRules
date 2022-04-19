@@ -1,0 +1,780 @@
+// Setup Messages
+
+@0 	= ~House Rules Mod~
+@1  = ~This step may take a few moments ...~
+@2  = ~You must install the main component before any others. Please exit and begin again.~
+@5	= ~This mod requires IWD:EE~
+@10	= ~Reveal City Maps~
+@20 = ~Reveal Kuldahar, Easthaven & Lonleywood~
+@25 = ~Reveal Kuldahar & Easthaven only~
+@30 = ~Pomab & Conlan sell Convenient Ammunition~
+@32 = ~Emmerich sells +1 Convenient Ammunition~
+@35 = ~Orrick Sells All His Items~
+@36 = ~No Save for Fire Arrows~
+@37 = ~This is a magical arrow that will burst into flames as it is fired at an enemy. The effect is similar to an arrow doused in oil and set to flame.
+
+STATISTICS:
+
+Damage: 1d6, +1d6 fire damage
+Damage type: Missile
+Launcher: Bow
+
+Weight: 0
+~
+@60 = ~Items~
+@61 = ~Conlan sells Magic Clubs~
+@62 = ~Barbed Club of Pain~
+@70 = ~Jiedra and Doluv Bonus Merchants~
+@71 = ~Doluv~
+@72 = ~Jiedra~
+@83    = ~Silver Amulet~
+@84    = ~Sensate Amulet~
+@85    = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain.  The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties.  Only one amulet can be dangled from the neck at a time.  ~
+@86    = ~This amulet originates in the city of Sigil where is was forged the by the Society of Sensation.  It was given out to the most loyal sensates, to protect them when they traveled the Planes looking for new experiences.
+
+STATISTICS
+
+While Equipped:
++5 bonus to hit points
++2 bonus to charisma
+Permanent protection from evil
+
+Usable By:
+ Cleric~
+@87    = ~Katana~
+@88    = ~Dak'kon's Zerth Blade~
+@89    = ~Katana
+The katana is a single-edged, slightly curved sword that ends with a chisel point. The katana is perhaps one of the finest swords ever made, the steps to its creation a long and secret process, that is more art form than anything else.  This blade is an important facet of Kara-Tur culture.  To touch or wield a samurai's katana is to insult the samurai and to incite his wrath.  For a gaijin, or foreigner, to own such a blade is a rare occurrence. Either the gaijin is a greatly honored friend of an important minister, or  the gaijin has murdered a samurai.
+
+STATISTICS:
+
+Damage:  1D10
+Damage type:  slashing
+Weight:  6
+Speed Factor: 4
+Proficiency Type: Katana
+Type:  1-handed
+Requires: 6 Strength
+~
+@90   = ~This sword was the weapon of choice of the famous githzerai Dak'kon.  Dak'kon was killed by a powerful entity while working for a creature known as the 'Nameless One'.  
+
+STATISTICS:
+
+Equipped Abilities:
++1 AC bonus
+able to memorize one extra 1st, 2nd, 3rd, and 4th level mage spell
+
+THAC0: +2 bonus
+Damage:  1D10 +2
+Damage type:  slashing
+Weight:  4
+Speed Factor: 2
+Proficiency Type: Katana
+Type:  1-handed
+Requires: 6 Strength
+~
+@91   = ~Halberd~
+@92   = ~Harmonium Halberd~
+@93   = ~By far the oldest and most often used pole-arm, the halberd consists of a cleaver-like axe blade mounted on a staff averaging six feet in length. The axe blade is balanced at the rear with a fluke, and surmounted by a sharp spike, usually of quadrangular design.  The fluke is sometimes replaced by a hook used to dismount cavalry.  A halberd can be best described as a cross between a spear and an axe.
+
+STATISTICS:
+
+Damage: 1D10
+Damage type: piercing
+Weight: 15
+Speed Factor: 9
+Proficiency Type: Halberd
+Type: 2-handed
+Requires: 13 Strength
+~
+@94   = ~This weapon is a powerful weapon usually given out to the most important of Harmonium captains.  The Harmonium is an faction based out of the planar city known as 'Sigil'.
+
+STATISTICS:
+
+Equipped Abilities:
+ +1 strength
+ -1 Intelligence
+ -1 Wisdom
+THAC0: +3 bonus
+Damage:  1D10 +3
+Damage type:  piercing
+Weight: 12
+Speed Factor: 9
+Proficiency Type: Halberd
+Type:  2-handed
+Requires: 11 Strength
+~
+@95   = ~Harp~
+@96   = ~Harp of Pandemonium~
+@97   = ~Harps are stringed instruments often used by bards.  This small harp is ideal for the travelling warbler or tales and ballads.~
+@98   = ~Ravel was a powerful night hag that lived in the city of Sigil.  Somehow she angered the Lady of Pain, a powerful godlike figure that rules the city of Sigil.  The Lady of Pain imprisoned Ravel within a magical maze, where the night hag would be trapped for all time.  The  harp was one of the many artifacts that Ravel left behind in Sigil when she was imprisoned.
+
+STATISTICS
+
+Special Abilities:  3 times a day can cause Pandemonium: all enemies must make a saving throw vs. spells or be tossed away from the bard as well as confused for three rounds.
+
+Usable By
+ Bards~
+@99   = ~Helmet~
+@100   = ~Vhailor's Helm~
+@101   = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended.  
+
+STATISTICS:
+
+Armor Class Bonus:  None
+Special:  Protects Against Critical Hits
+Weight: 2
+~
+@102   = ~This helmet was worn by a mysterious warrior named Vhailor.  The warrior was destroyed while helping a creature known as the 'Nameless one'.  
+
+STATISTICS:
+
+Special Abilities (once per day): cast simulacrum
+Armor Class Bonus: 1
+Weight:  2
+~
+@103   = ~Full Plate Mail~
+@104   = ~Plate of Balduran~
+@105   = ~Full plate armor is the best armor a warrior can buy, both in appearance and protection.  The perfectly fitted interlocking plates are specially angled to deflect arrows and blows, and the entire suit is carefully adorned with rich engraving and embossed detail.
+
+STATISTICS:
+
+Armor Class: 1
+Weight: 70
+Requires: 15 Strength
+~
+@106   = ~This plate was worn by the famous hero Balduran.  It is part of a set of weapons and armor that was stolen from the museum in the city of Baldur's Gate.
+
+STATISTICS:
+
+Equipped Abilities:
+ +4 hit points
+ +1 Charisma bonus
+Armor Class: -1
+Weight: 50
+Requires: 15 Strength
+~
+@107   = ~Ring~
+@108   = ~Mercykiller Ring~
+@109   = ~A ring is a small band of precious metal that is used as jewelry.  Some rare rings have had enchantments placed upon them that confer various magical abilities.  These rings are highly sought after, especially by those of the adventuring profession.~
+@110   = ~The Mercykillers are a powerful faction based out of the planar city of Sigil. This ring is given out to Mercykiller assassins when they are sent out to punish those who have broken the laws of Sigil.  Often these assassins will roam as far as the Prime Material plane.  
+
+STATISTICS
+
+Equipped Abilities:  
++20% to set snares
++20% to hide in shadows
++20% to move silently
+
+Usable By:
+ Thief~
+@111   = ~Mage Robe~
+@112   = ~Robe of Vecna~
+@113   = ~Since the age of Netheril, mages have learned to bestow a wide variety of magical properties upon the everyday objects that surround them. A favorite item of such enchantment is the common robe. It is lightweight, affordable, and holds its enchantment well, thereby making it ideal equipment for a mage. Due to their magical heritage, however, only single-, dual-, and multi-class mages may wear these enchanted robes.~
+@114   = ~This robe doesn't even have close to the power that the two famous artifacts, the Hand and Eye of Vecna possess.  Still, from simply being worn by the powerful lich, the robe absorbed enough magical energies to become a potent magic item.
+
+STATISTICS:
+
+Equipped Abilities:
+AC: base set to 5
+Improves casting speed by 4
++10% Magic Resistance
+Weight:  3
+~
+@115   = ~Long Sword~
+@116   = ~Sword of Balduran~
+@117   = ~These swords are usually referred to as doubled-edged swords, war swords, or military swords.  In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture, and may vary within the same culture depending on the era.  Among the most common characteristics of all long swords is their length, which ranges from 35 inches to 47 inches.  In the latter case, the blade is known to take up 40 inches of the total length.  Most long swords have a double-edged blade and a sharp point at the tip.  Despite the tip, the long sword is designed for slashing, not thrusting. 
+
+STATISTICS:
+
+Damage:  1D8
+Damage type:  slashing
+Weight: 4
+Speed Factor: 5
+Proficiency Type: Long Sword
+Type:  1-handed
+Requires: 6 Strength
+~
+@118   = ~The Sword of Balduran was the favored weapon of the famous adventurer who founded the city of Baldur's Gate.   It is part of a set of weapons and armor that was stolen from the museum in the city of Baldur's Gate.
+
+STATISTICS:
+
+Equipped Abilities:
++10% to lore
++10% Magic Resistance
+Damage:  1D8 +2
+THACO:  +2 bonus
+Damage type:  slashing
+Weight: 3
+Speed Factor: 3
+Proficiency Type: Long Sword
+Type:  1-handed
+Requires: 5 Strength
+~
+@119   = ~Medium Shield~
+@120   = ~Shield of Balduran~
+@121   = ~A medium shield is carried in the same manner as a small shield.  Unlike the small shield, however, its weight prevents the character from using his shield hand for anything other than carrying the medium shield.  Medium shields are usually made of metal, range from 3'-4' in diameter, and can be of any shape, from round to square to a spread dragon's wings.  A typical medieval shield resembles a triangle with one point facing downward.
+
+STATISTICS:
+
+Armor Class Bonus: 1
+Weight: 7
+Requires: 12 Strength
+~
+@122   = ~This shield was worn by the hero Balduran.   It is part of a set of weapons and armor that was stolen from the museum in the city of Baldur's Gate.
+
+STATISTICS:
+
+Equipped Abilities:
+ Reflects beholder rays
+ -1 Penalty to Strength
+Armor Class Bonus: 4
+Weight: 5
+Requires: 12 Strength
+~
+@123 	= ~Suryris's Blade +2~
+@124	= ~Suryris, a white minotaur who traveled the Orsraun mountains in Turmish, lived for nothing but the thrill of combat and encouraged warriors to challenge him for his magical weapon: a powerful halberd. Despite his aggressive nature, he was an honorable combatant and never slew opponents he could overpower. Suryris met his superior only once, in a battle that lasted hours and had the minotaur often fearing defeat. The contest ended when his opponent's sword broke, but Suryris knew he likely would have been bested had it continued. He presented his weapon to the astonished man, who thereafter told of this noble creature to anyone who would listen.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d10+2 (slashing or piercing, whichever is better)
+Speed Factor: 7
+Proficiency Type: Halberd
+Type: Two-handed
+Requires:
+ 13 Strength
+
+Weight: 12
+~
+@125	= ~Borok's Fist +2~
+@126	= ~Borok Thundercracker was a dwarven hero that led several campaigns against giants and other "tall vermin" that had plagued his people in a number of their communities. This hammer was his blessed weapon, which his elven allies called his "little iron fist," though not to his face.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d4+3, +1 electrical damage
+Damage type: Crushing
+Speed Factor: 2
+Proficiency Type: War Hammer
+Type: One-handed
+Requires:
+ 9 Strength
+
+Weight: 5
+~
+@127	= ~Staff Mace +2~
+@128	= ~This weapon appears to be a normal large walking staff, but it has a faint aura of alteration magic. Uttering the command word causes the staff to assume the attributes of a mace, allowing it to be wielded with one hand. This was likely designed for Clerics or Druids, though that does not preclude use by most others.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 2d4+2 (crushing)
+Speed Factor: 2
+Proficiency Type: Quarterstaff
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 4
+~
+@131	= ~The Whistling Sword +2~
+@132	= ~The term "short sword" does not exist in sword classifications, but has come describe the earliest type of sword, a double-edged blade about two feet in length. There are etched runes on the surface of this weapon that glow during combat, indicating it has undergone some form of enchantment, but no identifying marks can be recognized.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d6+2 (piercing)
+Speed Factor: 1
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 2
+~
+@133	= ~Heavy Crossbow of Searing +1~
+@134	= ~A marvel of engineering, this crossbow covers bolts in oil and sets them alight when fired. It is enchanted as well, likely to keep the mechanism working smoothly. It bears the hallmarks of the inventor's god, Gond.
+
+STATISTICS:
+
+THAC0: +1
+Damage: +3 (missile), +2 fire damage
+Speed Factor: 9
+Proficiency Type: Crossbow
+Type: Two-handed
+Requires:
+ 12 Strength
+
+Weight: 10
+~
+@135	= ~Giant Hair Crossbow +3~
+@136	= ~Though hard to verify, it is claimed that the bowstring of this crossbow is made from the hair of a frost giant. Whatever the truth, the weapon is incredibly hard to draw, although its accuracy and subsequent damage are well worth the strain required (Strength of 15 or greater). 
+
+STATISTICS:
+
+THAC0: +3
+Damage: +5 (missile)
+Speed Factor: 7
+Proficiency Type: Crossbow
+Type: Two-handed
+Requires:
+ 15 Strength
+
+Weight: 11
+~
+@137	= ~Karajah's Life and Death +3~
+@138	= ~Karajah was Calimshan's champion of pit fighting for a full decade, and seemingly unbeatable. His success, or so he claimed, was due to the mobility that his light armor afforded him. He may well have been unaware of the suit's other qualities, but his peers ignored his claims of ignorance when enchantments were discovered. The armor survived the subsequent beating, whereas Karajah did not. 
+
+STATISTICS:
+
+Armor Class: 5 (7 vs. piercing and missile)
+Requires:
+ 3 Strength
+
+Weight: 4
+~
+@139	= ~Aeger's Hide +3~
+@140	= ~This heavy and thick bear hide is all that remains of the fabled Aeger. Several hundred years ago, the Aeger, a giant bear, terrorized hundreds of small villages up and down the Sword Coast. The bear was invulnerable to fire, cold, or acid. Finally the young men and women of several villages banded together, forming a militia almost two hundred people strong. The Aeger was surrounded and finally slain. Less than a dozen villagers survived, and they carved the Aeger's hide amongst themselves. Out of one of the pieces this armor was created.
+
+STATISTICS:
+
+Equipped abilities:
+– Cold Resistance: +15%
+– Fire Resistance: +15%
+– Acid Resistance: +15%
+– Immunity to confusion
+
+Armor Class: 3 (5 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 35
+~
+@141	= ~Fortress Shield +3~
+@142	= ~This shield, as tall as a man, is aptly named. With it, Phil Pious, a paladin of the Most Noble Order of the Radiant Heart, once held a marauding battalion of hobgoblin and kobold archers at bay till they exhausted their arrows. As the shield is almost as useful in melee as it is at range, he then slew each and every creature.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +4, an additional +7 vs. missile attacks
+
+Requires:
+ 15 Strength
+
+Weight: 3
+~
+@143	= ~Rod of Resurrection~
+@144	= ~This rod enables anyone to resurrect the dead as if they were of high enough level to cast the resurrection spell and if they were a priest. No rest is required, as the rod bestows the life-giving effects. Each use of the rod expends one charge.
+
+STATISTICS:
+
+Charge abilities:
+– Resurrection
+  Special: Raised target is fully healed
+  Range: Unlimited
+  Area of Effect: 1 creature
+
+Weight: 3
+~
+@145	= ~Ring of Air Control~
+@146	= ~Air elementals make for powerful foes, but with this ring, they can become valuable allies. Dark tales tell of groups of Red Wizards, all with rings of elemental command, descending upon small villages with no warning and destroying every living thing in sight. Although the truth of these rumors is questionable, the fact remains that a ring of this power in the wrong hands is dangerous.
+
+STATISTICS:
+
+Charge abilities:
+– Charm Air Elemental once per day (Save vs. Spell at +2 negates)
+  Range: Touch
+  Duration: 45 seconds
+  Area of Effect: 1 air elemental
+
+– Improved Invisibility once per day
+  Range: Touch
+  Duration: 1 turn
+  Area of Effect: 1 creature
+
+Weight: 0
+~
+@147	= ~Sword of Flame +1~
+@148	= ~This blade burns with a magical fire, and a charring blast is released whenever a hit is scored. "Meta Infernum" is etched on the hilt, though it appears somewhat faded and may not be original to the sword.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d8+1, +1 fire damage
+Damage type: Slashing
+Speed Factor: 4
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4
+~
+@149	= ~Girdle of Hill Giant Strength~
+@150	= ~This plain belt makes the wearer as strong as a hill giant, but does not make him or her giant size. Many a cocky warrior has been surprised by a much smaller opponent with remarkable strength. More often than not a belt such as this is the reason.
+
+STATISTICS
+
+Equipped abilities:
+– Strength: 19
+
+Weight: 2
+~
+@161    = ~Shop~
+@162    =  ~This appears to be an ornate butter knife.
+
+STATISTICS:
+
+Weight: 1
+~
+@163    =  ~Butter Knife of Balduran~
+@164    =  ~Ornate Butter Knife~
+@165    =  ~Legends often speak of Balduran's butter knife. The hero would allow no other utensil to touch his condiments. It is believed that his mother gave the ornate butter knife to him as an eighteenth birthday gift.
+
+STATISTICS:
+
+Combat abilities:  
+– Slays slimes, oozes, and jellies
+
+THAC0: +2
+Damage: 1d3+2 (piercing)
+Speed Factor: 2
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1
+~
+@170 = ~Class HLAs~
+@171 = ~House Rules Class HLAs~
+@200 = ~Kit Tomes for IWDEE~
+@201 = ~Kit Tomes~
+@202 = ~Panver's Magical Tomes~
+@203 = ~Panver's Magical Tomes for Rogues~
+@1002 = ~Quiver of Plenty +1~
+@1003 = ~The history of this magical quiver has been long forgotten, though it likely had something to do with the inexplicable but well documented shortage of competent fletchers during the Time of Troubles.
+
+STATISTICS:
+
+Unlimited +1 Arrows~
+@1004 = ~Case of Plenty +1~
+@1005 = ~The history of this magical case has been long forgotten, though it likely had something to do with the inexplicable but well documented shortage of competent fletchers during the Time of Troubles.
+
+STATISTICS:
+
+Unlimited +1 Bolts~
+@1006 = ~Bag of Plenty +1~
+@1007 = ~Although this soft cloth pouch is empty right now, there is still a powerful aura of magic surrounding it.
+
+STATISTICS:
+
+Unlimited +1 sling bullets~
+@1010 = ~Quiver of Arrows~
+@1011 = ~A quiver is a container that holds arrows.  This item has been enchanted with powerful magic and never seems to run out of arrows.
+
+
+STATISTICS:
+
+Equipped abilities:
+- Unlimited arrows 
+
+Weight: 0
+~
+@1012 = ~Case of Bolts~
+@1013 = ~This leather case is a container that holds crossbow bolts.  This item has been enchanted with powerful magic and never seems to run out of crossbow bolts.
+
+
+STATISTICS:
+
+Equipped abilities:
+- Unlimited bolts
+
+Weight: 0
+~
+@1014 = ~Bag of Bullets~
+@1015 = ~This bag contains bullets.  This item has been enchanted with powerful magic and never seems to run out of bullets.
+
+
+STATISTICS:
+
+Equipped abilities:
+- Unlimited bullets
+
+Weight: 0
+~
+@1030 = ~Night Club~
+@1035 = ~This darkwood shaft surrounds a core of lead, giving it both stealth and heft. Its enchantment connects the club to the Shadow Weave, lending it great power.
+
+STATISTICS:
+
+THAC0: +2 
+Damage: 1d6+2 (crushing)
+Speed Factor: 3
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3
+~
+@1040 = ~Club +1~
+@1041 = ~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d6+1 (crushing)
+Speed Factor: 3
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+@1050 = ~Club~
+@1051 = ~Barbed Club of Pain~
+@1052 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This one is very light weight and slim, so it’s easy to handle but can’t do much damage. Only the metal pieces in it, make it appear dangerous. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
+
+STATISTICS:
+
+Damage: 1d4 (crushing)
+Speed Factor: 4
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 2
+~
+@1053 = ~A Loviatan priest from the Resting Place of the Whip in Melvaunt created the Barbed Club of Pain to use as an offhand weapon beside his whip. It was orginally acquired by a Bhaalist assassin who fulfilled a mission for the temple. Since then the Barbed Club of Pain has travelled throughtout the world in various hands.  How it came to end up in the Severed Hand is lost to time.
+
+In contrast to most other clubs, this weapon is crafted from a simple thin stick. Its slim size and low weight makes the club easy to handle and allows for dangerously precise maneuverability. Numerous metal barbs grew out of the wood, carefully created through the priest's magic and Loviatar's fell blessing. With every strike sharp barbs dig into the victim's flesh, causing extreme pain and even extra damage that continues for some time after the blow.
+
+STATISTICS:
+
+THACO: +1
+Damage: 1d4 +1 (crushing), +2 bleeding damage/round, lasting two rounds.
+Speed Factor: 4 
+Proficiency Type: Clubs 
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight 2
+~
+@2000 = ~
+
+House Rules FIGHTER CLASS HIGH LEVEL ABILITIES:
+
+-  Level 15: POWER ATTACK
+A Power Attack allows the warrior to strike blows so forceful that they stun an opponent for 2 rounds if it fails its save vs. death at a -4 penalty. The ability lasts for 2 rounds.
+
+-  Level 20: WHIRLWIND ATTACK
+This ability allows the warrior to unleash a flurry of super-fast blows.  The ability sets one's number of attacks per round to 10 without penalties, the whirlwind attack lasts for one round.
+
+-  Level 25: CRITICAL STRIKE
+A high-level warrior's intimate knowledge of vital spots on opponents allows him to, once per day, concentrate all of the attacks in one round to strike a vital area every time. With this ability, every attack roll made in the next round is a natural 20, a critical hit.
+
+-  Level 30: CRITICAL STRIKE
+The warrior gains an additional use of Critical Strike.
+~
+@2001 = ~
+
+House Rules PALADIN CLASS HIGH LEVEL ABILITIES:
+
+-  Level 15: RESIST MAGIC
+This ability allows the paladin to temporarily tap a great inner strength and fight off the effects of malevolent magic. For 4 rounds the paladin's magic resistance is set to 50%. This is not cumulative with other forms of magic resistance so if the paladin already has 50% magic resistance or greater, the ability is useless.
+
+-  Level 20: WHIRLWIND ATTACK
+This ability allows the warrior to unleash a flurry of super-fast blows.  The ability sets one's number of attacks per round to 10 without penalties, the whirlwind attack lasts for one round.
+
+-  Level 25: CRITICAL STRIKE
+A high-level warrior's intimate knowledge of vital spots on opponents allows him to, once per day, concentrate all of the attacks in one round to strike a vital area every time. With this ability, every attack roll made in the next round is a natural 20, a critical hit.
+
+-  Level 30: CRITICAL STRIKE
+The warrior gains an additional use of Critical Strike.
+~
+@2010 = ~
+
+House Rules THIEF CLASS HIGH LEVEL ABILITIES:
+
+-  Level 15: GREATER EVASION
+This ability gives -6 to AC and -3 to all saving throws.  In addition, Greater Evasion allows the rogue to move so quickly that his movement rate is increased by 2 and normal missiles have no chance of striking him. Greater Evasion lasts for 5 rounds.
+
+-  Level 20: SET SPIKE TRAP
+This ability allows the rogue to set a powerful spring-loaded spike trap that does 20D6 damage to the unsuspecting creature that sets it off.
+
+-  Level 25: ASSASSINATION
+Using every clever trick an experienced thief has learned in countless battles, this ability allows every strike in the next round to act as a backstab (or sneak attack), using the thief's existing modifiers to determine damage.
+
+-  Level 30: ASSASSINATION
+The rogue gains an additional use of Assassination.
+~
+@2011 = ~
+
+House Rules BARD CLASS HIGH LEVEL ABILITIES:
+
+-  Level 15: AVOID DEATH
+With a superhuman effort, a high-level bard can avoid almost certain death.  The effect lasts for 5 rounds and during this time the bard gains a -5 bonus to save vs. death, his hit points are increased by 20 and the bard becomes immune to death magic for the duration of the ability.
+
+-  Level 20: USE ANY ITEM
+Bards take pride in their ability to adapt and make clever use of whatever is at hand.  This ability is an extension of that basic skill.  Once learned, the effect is permanent.  The ability allows the rogue to use any item, even items that are typically restricted to one class.  This
+allows the bard to use everything from wands and scrolls to mighty weapons that none but a fighter could otherwise use.
+
+-  Level 25: IMPROVED ALACRITY
+Improved Alacrity essentially erases the pause between casting spells.  When active the spellcaster can begin casting a new spell the instant his is finished casting his current spell.  The effect lasts for 2 rounds.
+
+-  Level 30: IMPROVED ALACRITY
+The Bard gains an additional use of Improved Alacrity.
+~
+@2015 = ~
+
+House Rules CLERIC CLASS HIGH LEVEL ABILITIES:
+
+-  Level 15: MASS HEAL
+Using divine ability, a high level priest may picture the faces of his fellow party members and focus on the unity of the group.  Upon completion, all party members within 30 foot radius of the caster are healed 2d8 + 2/level hit points.  Other conditions suffered by the party are cured, as well: fatigue, poison, disease, blindness and deafness.
+
+-  Level 20: IMPLOSION
+This divine ability creates a rift in the earth beneath the target which implodes and closes in upon itself, crushing and burning the target and holding it for 1 round.  The spell does 10D10 fire damage and 2D10 blunt damage.  The victim can save vs. spell for half damage.
+
+-  Level 25: MASS RAISE DEAD
+With divinely-granted control over life or death, a high-level cleric gains a more powerful version of of the Raise Dead Spell.  This ability brings up to 5 party members back to life and heals 3D10-1 per level of the caster points of damage.  They can regain the rest of their hit points by natural healing or curative magic.  This ability restores life to dwarves, gnomes, half-elves, halflings, elves, half-orcs and humans.
+
+-  Level 30: MASS HEAL
+The priest gains an additional use of Mass Heal.
+~
+@2016 = ~
+
+House Rules DRUID CLASS HIGH LEVEL ABILITIES:
+
+-  Level 15: ELEMENTAL SUMMONING
+Special Ability Activation Time: 1 round
+Range: 10 yards  Area of Effect: Special
+Duration: 10 rounds
+Drawing power from the environment, this ability summons 2 16HD elementals randomly chosen from earth, air or fire.  The elementals stay for 10 rounds and will obey the druid as long as they remain summoned.  There is a 10% chance that a randomly chosen Elemental Prince will be summoned instead.  The Elemental Princes rule over other elementals in their respective planes.  The Elemental Prince of Air is Chan.  The Elemental Prince of Earth is Sunnis.  The Elemental Prince of Fire is Zaaman Rul.
+
+-  Level 20: AURA OF FLAMING DEATH
+Special Ability Activation Time: 4
+Range: 0  Area of Effect: The Caster
+Duration: 1 round/2 levels
+This ability causes the druid to be enveloped by an aura of intense flame that both injures opponents and protects from damage.  This shield not only grants the user 90% fire resistance and grants a -4 AC bonus, but also protects the druid from attacks made within a 5' radius around the caster.  An opponent that hits the caster with any weapons or spells within this radius suffers 2D10-2 fire damage.  In addition, the intense heat protects the caster from all non-magical weapons, melee or missile.
+
+-  Level 25: GREATER ELEMENTAL SUMMONING
+Special Ability Activation Time: 1 round
+Range: 10 yards  Area of Effect: Special
+Duration: 10 rounds
+High level druids, having a powerful link to the elements, can summon the Elemental Princes themselves, randomly chosen from earth, air or fire.  The Elemental Princes stay for 10 rounds and will obey the druid as long as they remain summoned.
+
+-  Level 30: AURA OF FLAMING DEATH
+The druid gains an additional use of Aura of Flaming Death.
+~
+@2017 = ~
+
+House Rules RANGER CLASS HIGH LEVEL ABILITIES:
+
+-  Level 15: WHIRLWIND ATTACK
+This ability allows the warrior to unleash a flurry of super-fast blows.  The ability sets one's number of attacks per round to 10 without penalties, the whirlwind attack lasts for one round.
+
+-  Level 20: WHIRLWIND ATTACK
+The ranger gets an additional use of Whirlwind Attack.
+
+-  Level 25: CRITICAL STRIKE
+A high-level warrior's intimate knowledge of vital spots on opponents allows him to, once per day, concentrate all of the attacks in one round to strike a vital area every time. With this ability, every attack roll made in the next round is a natural 20, a critical hit.
+
+-  Level 30: CRITICAL STRIKE
+The ranger gets an additional use of Critical Strike.
+~
+@2018 = ~
+
+House Rules MONK CLASS HIGH LEVEL ABILITIES:
+
+-  Level 15: TIGER STRIKE
+With the Tiger Strike ability, the monk gains the ability to strike a mighty blow, knocking an opponent back for a considerable distance and stunning the opponent for 1 round.  All attacks made in the first round are critical hits.  The ability lasts for 2 rounds.  Large creatures such as a dragons or giants will not be knocked back or stunned.
+
+-  Level 20: HARDINESS
+Calling upon hidden reserves of strength during times of danger, a monk can use the Hardiness ability to gain 40 % resistance to all forms of physical damage.  The ability lasts for 1 round for every 2 levels of the monk.
+
+-  Level 25: CRITICAL STRIKE
+A high-level monks's intimate knowledge of vital spots on opponents allows him to, once per day, concentrate all of the attacks in one round to strike a vital area every time.  With this ability, every attack roll made in the next round is a natural 20, a critical hit.
+
+-  Level 30: HARDINESS
+The monk gains an additional use of Hardiness.
+~
+@2019 = ~
+
+House Rules ARCANE CLASS HIGH LEVEL ABILITIES:
+
+-  Level 15: IMPROVED ALACRITY
+Improved Alacrity essentially erases the pause between casting spells.  When active the spellcaster can begin casting a new spell the instant his is finished casting his current spell.  The effect lasts for 2 rounds.
+
+-  Level 20: EXTRA LEVEL 6 AND 7 SPELLS
+This ability allows the arcane caster to cast additional Level 6 and Level 7 spell.
+
+-  Level 25: IMPROVED ALACRITY
+The arcane caster gains an additional use of Improved Alacrity.
+
+-  Level 30: EXTRA LEVEL 8 SPELL
+This ability allows the arcane caster to cast one additional Level 8 spell.
+~
+@2020 = ~Improved Alacrity~
+@2021 = ~Mass Raise Dead~
+@2022 = ~Implosion~
+@2023 = ~Elemental Summoning~
+@2025 = ~Greater Elemental Summoning~
+@2026 = ~Mass Heal~
+@2027 = ~Tiger Strike~
+@2028 = ~Extra Level 6 and 7 Spells~
+@2029 = ~Whirlwind Attack~
+@2030 = ~Aura of Flaming Death~
+@3000 = ~Manual~
+@3001 = ~Extra Level 8 Spells~
+@3002 = ~A tome or manual provides the reader with a wide variety of tips and pointers that may be applied to obtain improvement in skills or abilities. While the simple fisherman or the great lord may gain insight from scholarly writing, the most desired and valuable tomes are fortified with potent magic.  Magical tomes may permit an individual to permanently raise their capabilites or allow them to master new abilities.  Unfortunately, the powerful magic of such manuals cause them to disappear after a single use.~
+@3003 = ~Gained new class capabilities permanently~
+@3101 = ~Book of the Berserker~
+@3102 = ~Book of the Wizard Slayer~
+@3103 = ~Book of the Kensai~
+@3104 = ~Manual of the Cavalier~
+@3105 = ~Manual of the Inquisitor~
+@3106 = ~Manual of the Undead Hunter~
+@3107 = ~The Archer's Guide~
+@3108 = ~The Stalker's Guide~
+@3109 = ~The Beast Master's Guide~
+@3110 = ~Lexicon of the Assassin~
+@3111 = ~Lexicon of the Bounty Hunter~
+@3112 = ~Lexicon of the Swashbuckler~
+@3113 = ~Text of the Blade~
+@3114 = ~Text of the Jester~
+@3115 = ~Text of the Skald~
+@3116 = ~Codex of the Totemic Druid~
+@3117 = ~Codex of the Shapeshifter~
+@3118 = ~Codex of the Avenger~
+@3119 = ~The Priest's Guide to Talos~
+@3120 = ~The Priest's Guide to Helm~
+@3121 = ~The Priest's Guide to Lathander~
+@3122 = ~Tome of the Abjurer~
+@3123 = ~Tome of the Conjurer~
+@3124 = ~Tome of the Diviner~
+@3125 = ~Tome of the Enchanter~
+@3126 = ~Tome of the Illusionist~
+@3127 = ~Tome of the Invoker~
+@3128 = ~Tome of the Necromancer~
+@3129 = ~Tome of the Transmuter~
+@3130 = ~Tome of the Wildmage~
+@3131 = ~Book of the Barbarian~
+@3132 = ~Manual of the Blackguard~
+@3133 = ~Lexicon of the Shadow Dancer~
+@3134 = ~Book of the Dwarven Defender~
+@3135 = ~Tome of the Dragon Disciple~
+@3136 = ~Writings of the Dark Moon Monk~
+@3137 = ~Writings of the Sun Soul Monk~
+@3140 = ~The Priest's Guide to Tyr~
+@3141 = ~The Priest's Guide to Tempus~
+@3200 = ~Panver~
+@3205 = ~Panver's Merchandise~
+@3206 = ~Panver Sells 01 Tome per Kit~
+@3207 = ~Panver Sells 02 Tome per Kit~
+@3208 = ~Panver Sells 06 Tome per Kit~
+@3209 = ~Panver Sells 01 Tome per Kit~
+@3210 = ~Panver Sells 10 Tomes per Kit~

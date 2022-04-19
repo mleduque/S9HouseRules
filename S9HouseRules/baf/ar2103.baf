@@ -1,0 +1,9 @@
+IF
+	Global("S9HouseRules_KUSMITH","GLOBAL",0)
+THEN
+	RESPONSE #100
+		AddStoreItem("KUSMITH","s9quiv01",10,1)
+		AddStoreItem("KUSMITH","s9quiv02",10,1)
+		AddStoreItem("KUSMITH","s9quiv05",10,1)
+		SetGlobal("S9HouseRules_KUSMITH","GLOBAL",1)
+END

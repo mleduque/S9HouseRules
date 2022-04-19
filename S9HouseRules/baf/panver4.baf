@@ -1,0 +1,7 @@
+IF
+	Global("S9AddPanver","AR2111",0)  // Root Cellar
+THEN
+	RESPONSE #100
+		CreateCreature("S9PANVER",[352.423],6)
+        SetGlobal("S9AddPanver","AR2111",1)
+END

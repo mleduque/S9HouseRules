@@ -1,0 +1,7 @@
+IF
+	Global("S9AddWmart2","AR2101",0)
+THEN
+	RESPONSE #100
+		CreateCreature("wmart2",[124.202],1)
+                SetGlobal("S9AddWmart2","AR2101",1)
+END

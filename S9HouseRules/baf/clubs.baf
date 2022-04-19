@@ -1,0 +1,9 @@
+IF
+	Global("S9CLUBS","GLOBAL",0)
+THEN
+	RESPONSE #100
+		AddStoreItem("KUSMITH","S3ICL01",2,1)
+		AddStoreItem("KUSMITH","S3ICL02",1,1)
+		AddStoreItem("KUSMITH","S3ICL04",1,1)
+		SetGlobal("S9CLUBS","GLOBAL",1)
+END

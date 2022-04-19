@@ -1,0 +1,7 @@
+IF
+	Global("S9HouseRules_PAINCLUB","GLOBAL",0)
+THEN
+	RESPONSE #100
+		ActionOverride("War Chest 4",CreateItem("S3CLPAIN",0,0,0)) // Barbed Club of Pain
+		SetGlobal("S9HouseRules_PAINCLUB","GLOBAL",1)
+END

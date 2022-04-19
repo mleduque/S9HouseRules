@@ -1,0 +1,1589 @@
+BACKUP ~S9HouseRules/backup~
+AUTHOR ~Smeagolheart @forum.baldursgate.com, S9~
+VERSION ~1.1~
+
+AUTO_TRA ~S9HouseRules/languages/%s~
+README ~S9HouseRules/readme.html~
+LANGUAGE  ~English~  ~english~  ~S9HouseRules/languages/english/setup.tra~
+
+// useful references: http://iesdp.gibberlings3.net/files/2da/2da_tob/clabxx00.htm  // clab****.2da iesdp
+// http://iesdp.gibberlings3.net/appendices/spell_lists/tobhlbabilities.htm //hla spell names
+
+//
+// Reveal City Maps
+//
+BEGIN @20 DESIGNATED 20						
+SUBCOMPONENT @10
+GROUP @10
+	ACTION_FOR_EACH file IN   
+	  ~AR1000.bcs~ 								// Easthaven
+	  ~AR2100.bcs~ 								// Kuldahar
+	  ~AR9100.bcs~ 								//Lonleywood
+	  BEGIN
+	  
+	  ACTION_IF FILE_EXISTS_IN_GAME ~%file%~ BEGIN
+		EXTEND_BOTTOM ~%file%~ ~S9HouseRules/baf/reveal.baf~
+	  
+	  END
+END
+BEGIN @25 DESIGNATED 25
+SUBCOMPONENT @10
+GROUP @10
+	ACTION_FOR_EACH file IN   
+	  ~AR1000.bcs~  								// Easthaven
+	  ~AR2100.bcs~  								 // Kuldahar
+	  BEGIN
+	  
+	  ACTION_IF FILE_EXISTS_IN_GAME ~%file%~ BEGIN
+		EXTEND_BOTTOM ~%file%~ ~S9HouseRules/baf/reveal.baf~
+	  
+	  END
+END
+
+//
+// ITEMS
+//
+BEGIN @30 DESIGNATED 30									// Add Convenient Ammunition to Conlan & Pomab
+GROUP @60
+	COPY ~S9HouseRules/bam/s3qbow.bam~ ~override~
+	COPY ~S9HouseRules/bam/s3qsling.bam~ ~override~
+	COPY ~S9HouseRules/bam/s3qxbow.bam~ ~override~
+
+	COPY ~S9HouseRules/itm/s9quiv01.itm~ ~override~
+		SAY 0x08 @1010  								// unidentified name
+		SAY 0x0c @1010  								// identified name
+		SAY 0x50 @1011  								// unidentified description
+		SAY 0x54 @1011  								// identified description	
+	
+	COPY ~S9HouseRules/itm/s9quiv02.itm~ ~override~
+		SAY 0x08 @1012
+		SAY 0x0c @1012
+		SAY 0x50 @1013
+		SAY 0x54 @1013
+
+	COPY ~S9HouseRules/itm/s9quiv05.itm~ ~override~
+		SAY 0x08 @1014
+		SAY 0x0c @1014
+		SAY 0x50 @1015
+		SAY 0x54 @1015
+
+	EXTEND_BOTTOM ~ar1007.bcs~   ~S9HouseRules/baf/ar1007.baf~   // Pomab's shop
+	EXTEND_BOTTOM ~ar2103.bcs~   ~S9HouseRules/baf/ar2103.baf~   // Conlan's shop
+
+BEGIN @32 DESIGNATED 32											//  Add Convenient +1 Ammunition to Emmerich
+GROUP @60
+	COPY ~S9HouseRules/bam/cdqbow.bam~ ~override~
+	COPY ~S9HouseRules/bam/cdqsling.bam~ ~override~
+	COPY ~S9HouseRules/bam/cdqxbow.bam~ ~override~
+
+	COPY ~S9HouseRules/itm/cdqbow.itm~   ~override~
+		SAY 0x08 @1002 									// unidentified name
+		SAY 0x0c @1002  								// identified name
+		SAY 0x50 @1003  								// unidentified description
+		SAY 0x54 @1003  								// identified description
+	  
+	COPY ~S9HouseRules/itm/cdqsling.itm~ ~override~
+		SAY 0x08 @1006
+		SAY 0x0c @1006
+		SAY 0x50 @1007
+		SAY 0x54 @1007
+	  
+	COPY ~S9HouseRules/itm/cdqxbow.itm~  ~override~
+		SAY 0x08 @1004
+		SAY 0x0c @1004
+		SAY 0x50 @1005
+		SAY 0x54 @1005
+
+	COPY_EXISTING ~emmeric.sto~ ~override~
+		ADD_STORE_ITEM ~cdqsling~ AFTER ~xbow04~ #0 #0 #0 ~IDENTIFIED~ #1 // bag o' plenty
+		ADD_STORE_ITEM ~cdqxbow~  AFTER ~xbow04~ #0 #0 #0 ~IDENTIFIED~ #1 // case o' plenty
+		ADD_STORE_ITEM ~cdqbow~   AFTER ~xbow04~ #0 #0 #0 ~IDENTIFIED~ #1 // quiver o' plenty
+	BUT_ONLY
+
+	
+BEGIN @61 DESIGNATED 61											// Magic clubs
+GROUP @60
+	// bams by artificial_sunlight, at http://forum.baldursgate.com~ 
+	COPY ~S9HouseRules/bam/S3ICL01.bam~ ~override~
+	COPY ~S9HouseRules/bam/S3ICL02.bam~ ~override~
+	COPY ~S9HouseRules/bam/S3ICL03.bam~ ~override~	
+
+	COPY ~S9HouseRules/itm/S3ICL01.itm~ ~override~
+	// Insert New icons to iventory and item Abilities (melee) to Club +1
+		WRITE_ASCII 0x3a ~S3ICL01~ #8
+		READ_LONG 0x64 "abilies_offset"
+		WRITE_ASCII %abilies_offset% + 0x04 ~S3ICL01~ #8
+		SAY 0x08 @1040
+		SAY 0x0c @1040
+		SAY 0x50 @1041
+		SAY 0x54 @1041
+		
+	COPY ~S9HouseRules/itm/S3ICL02.itm~ ~override~
+	// Insert New icons to iventory and item Abilities (melee) to Night Club		
+		WRITE_ASCII 0x3a ~S3ICL02~ #8
+		READ_LONG 0x64 "abilies_offset"
+		WRITE_ASCII %abilies_offset% + 0x04 ~S3ICL02~ #8
+		SAY 0x08 @1030
+		SAY 0x0c @1030
+		SAY 0x50 @1035
+		SAY 0x54 @1035
+	// Change paperdoll colors Night Club			
+		READ_LONG 0x6A "effects_offset"
+		READ_SHORT 0x70 "global_effects"
+		WHILE ("%global_effects%" > 0) BEGIN
+		SET "global_effects" = ("%global_effects%" - 1)
+		READ_SHORT ("%effects_offset%" + (0x30 * "%global_effects%")) "eff_type"
+		READ_LONG ("%effects_offset%" + 0x08 + (0x30 * "%global_effects%")) "location"
+		PATCH_IF (("%eff_type%" = 7) AND ("%location%" = 16)) BEGIN
+		  WRITE_LONG (("%effects_offset%" + 0x04 + (0x30 * "%global_effects%"))) 136
+		END
+		PATCH_IF (("%eff_type%" = 7) AND ("%location%" = 20)) BEGIN
+		  WRITE_LONG (("%effects_offset%" + 0x04 + (0x30 * "%global_effects%"))) 136
+		END
+		PATCH_IF (("%eff_type%" = 7) AND ("%location%" = 21)) BEGIN
+		  WRITE_LONG (("%effects_offset%" + 0x04 + (0x30 * "%global_effects%"))) 136
+		END
+	  END
+	  
+	COPY_EXISTING ~KUSMITH.sto~ ~override~	//Add Club+1 and Night Club to Conlan's shop after basic club
+		ADD_STORE_ITEM ~S3ICL01~ AFTER ~BLUN01~ #0 #0 #0 ~IDENTIFIED~ #2 //Club +1
+		ADD_STORE_ITEM ~S3ICL02~ AFTER ~BLUN01~ #0 #0 #0 ~IDENTIFIED~ #1 //Night Club
+	BUT_ONLY	  
+	  
+	COPY ~S9HouseRules/itm/S3CLPAIN.itm~  ~override~  
+		SAY 0x08 @1050
+		SAY 0x0c @1051
+		SAY 0x50 @1052
+		SAY 0x54 @1053 
+		
+	EXTEND_BOTTOM ~ar4005.bcs~   ~S9HouseRules/baf/ar4005.baf~   	// Barbed Club of Pain to Dragon's Eye Level 5
+
+
+BEGIN @35 DESIGNATED 35												// Orrick Sells Everything from the start
+GROUP @60
+
+	EXTEND_BOTTOM ~AR2100.bcs~   ~S9HouseRules/baf/orrick.baf~   	// Orrick's Items		
+	
+BEGIN @36 DESIGNATED 36												// Revised Fire Arrows
+GROUP @60
+
+	COPY ~S9HouseRules/itm/AROW08.itm~ ~override~
+		SAY 0x54 @37  		// identified description		
+	
+	
+BEGIN @70 DESIGNATED 70												//Jiedra and Doluv Bonus Merchants 
+GROUP @60
+
+COPY ~S9HouseRules/bmp/s9doluvm.bmp~ ~override/s9doluvm.bmp~
+COPY ~S9HouseRules/bmp/s9Jeidre.bmp~ ~override/s9Jeidre.bmp~
+
+COPY ~S9HouseRules/cre/WMART1.CRE~ ~Override~		// Doluv
+  SAY 0x8 @71
+  SAY 0xC @71
+
+COPY ~S9HouseRules/cre/WMART2.CRE~ ~Override~		// Jeidre
+  SAY 0x8 @72
+  SAY 0xC @72
+
+// Items  
+
+COPY ~S9HouseRules/itm/CLCK05.ITM~ ~Override~		//	Cloak of Balduran
+
+COPY ~S9HouseRules/itm/WA2AMU.ITM~ ~Override~		//	Sensate Amulet
+  SAY 0x8 @83
+  SAY 0xC @84
+  SAY 0x50 @85
+  SAY 0x54 @86
+
+COPY ~S9HouseRules/itm/WA2DAK.ITM~ ~Override~		//	Dak'kon's Zerth Blade
+  SAY 0x8 @87
+  SAY 0xC @88
+  SAY 0x50 @89
+  SAY 0x54 @90
+
+COPY ~S9HouseRules/itm/WA2HALB.ITM~ ~Override~		//	Harmonium Halberd
+  SAY 0x8 @91
+  SAY 0xC @92
+  SAY 0x50 @93
+  SAY 0x54 @94
+
+COPY ~S9HouseRules/itm/WA2HARP.ITM~ ~Override~		//	Harp of Pandemonium
+  SAY 0x8 @95
+  SAY 0xC @96
+  SAY 0x50 @97
+  SAY 0x54 @98
+
+COPY ~S9HouseRules/itm/WA2HELM.ITM~ ~Override~		//	Vhailor's Helm
+  SAY 0x8 @99
+  SAY 0xC @100
+  SAY 0x50 @101
+  SAY 0x54 @102
+
+COPY ~S9HouseRules/itm/WA2PLAT.ITM~ ~Override~		//	Plate of Balduran
+  SAY 0x8 @103
+  SAY 0xC @104
+  SAY 0x50 @105
+  SAY 0x54 @106
+
+COPY ~S9HouseRules/itm/WA2RING.ITM~ ~Override~		//	Mercykiller Ring
+  SAY 0x8 @107
+  SAY 0xC @108
+  SAY 0x50 @109
+  SAY 0x54 @110
+
+COPY ~S9HouseRules/itm/WA2ROBE.ITM~ ~Override~		//	Robe of Vecna
+  SAY 0x8 @111
+  SAY 0xC @112
+  SAY 0x50 @113
+  SAY 0x54 @114
+
+COPY ~S9HouseRules/itm/WA2S1H.ITM~ ~Override~		// Sword of Balduran
+  SAY 0x8 @115
+  SAY 0xC @116
+  SAY 0x50 @117
+  SAY 0x54 @118
+
+COPY ~S9HouseRules/itm/MISC1B.ITM~ ~Override~		// Butter Knife of Balduran
+  SAY 0x8 @164
+  SAY 0xC @163 
+  SAY 0x50 @162
+  SAY 0x54 @165 
+  
+COPY ~S9HouseRules/itm/WA2SHIEL.ITM~ ~Override~		// Shield of Balduran
+  SAY 0x8 @119
+  SAY 0xC @120
+  SAY 0x50 @121
+  SAY 0x54 @122
+  
+COPY ~S9HouseRules/itm/HALB03.ITM~ ~Override~		// Suryris's Blade +2
+  SAY 0xC @123
+  SAY 0x54 @124  
+  
+COPY ~S9HouseRules/itm/HAMM05.ITM~ ~Override~		//	Borok's Fist +2
+  SAY 0xC @125
+  SAY 0x54 @126
+  
+COPY ~S9HouseRules/itm/STAF06.ITM~ ~Override~		//	Staff Mace +2
+  SAY 0xC @127
+  SAY 0x54 @128  
+  
+COPY ~S9HouseRules/itm/SW1H29.ITM~ ~Override~		//	The Whistling Sword +2
+  SAY 0xC @131
+  SAY 0x54 @132
+    
+COPY ~S9HouseRules/itm/XBOW14.ITM~ ~Override~		//	Heavy Crossbow of Searing +1
+  SAY 0xC @133
+  SAY 0x54 @134
+
+COPY ~S9HouseRules/itm/XBOW08.ITM~ ~Override~		//	Giant Hair Crossbow +3
+  SAY 0xC @135
+  SAY 0x54 @136  
+  
+COPY ~S9HouseRules/itm/LEAT09.ITM~ ~Override~		//	Karajah's Life and Death +3
+  SAY 0xC @137
+  SAY 0x54 @138
+    
+COPY ~S9HouseRules/itm/LEAT20.ITM~ ~Override~		//	Aeger's Hide +3
+  SAY 0xC @139
+  SAY 0x54 @140
+
+COPY ~S9HouseRules/itm/SHLD23.ITM~ ~Override~		// Fortress Shield +3
+  SAY 0xC @141
+  SAY 0x54 @142  
+  
+COPY ~S9HouseRules/itm/RODS03.ITM~ ~Override~		// Rod of Resurrection
+  SAY 0xC @143
+  SAY 0x54 @144  
+  
+COPY ~S9HouseRules/itm/RING28.ITM~ ~Override~		// Ring of Air Control
+  SAY 0xC @145
+  SAY 0x54 @146  
+
+COPY ~S9HouseRules/itm/SW1H53.ITM~ ~Override~		// Sword of Flame +1
+  SAY 0xC @147
+  SAY 0x54 @148    
+
+COPY ~S9HouseRules/itm/BELT06.ITM~ ~Override~		// Girdle of Hill Giant Strength
+  SAY 0xC @149
+  SAY 0x54 @150    
+  
+// Stores
+COPY ~S9HouseRules/sto/WMART1.STO~ ~Override~		// D
+  SAY 0xC @161
+
+COPY ~S9HouseRules/sto/WMART2.STO~ ~Override~		// J
+  SAY 0xC @161
+
+
+// Dialogues
+COMPILE
+  ~S9HouseRules/dlg/wmart1.d~
+COMPILE
+  ~S9HouseRules/dlg/wmart2.d~
+  
+// Placement of bonus merchants
+EXTEND_BOTTOM ~AR2103.bcs~ 	~S9HouseRules/baf/WMART1.baf~		
+EXTEND_BOTTOM ~AR2102.bcs~  ~S9HouseRules/baf/WMART2.baf~
+
+//
+// CLASS HLAS
+//
+BEGIN @170 DESIGNATED 170
+GROUP @171
+// Code assistance from subtledoctor http://forum.baldursgate.com/post/quote/37290/Comment_582116
+// Should detect all Kits incl. mod additions if installed after the mod kits are installed
+
+INCLUDE ~S9HouseRules/lib/remove_lines.tpa~  	// subtledoctor 
+INCLUDE ~S9HouseRules/lib/lib.tpa~				// functions adopted from RR by aVENGER to set class/kit descriptions
+
+	//Custom HLA spells modified to be special abilities
+	COPY ~S9HouseRules/spl/SPWI921.SPL~ ~override/S9WI921.SPL~				// Improved Alacrity
+	  SAY NAME1 @2020 SAY NAME2 @2020
+	BUT_ONLY
+
+	COPY ~S9HouseRules/spl/SPPR729.SPL~ ~override/S9PR729.SPL~				// Mass Raise Dead
+	  SAY NAME1 @2021 SAY NAME2 @2021
+	BUT_ONLY
+	
+	COPY ~S9HouseRules/spl/SPPR728.SPL~ ~override/S9PR728.SPL~				// Implosion
+	  SAY NAME1 @2022 SAY NAME2 @2022
+	BUT_ONLY	
+
+	COPY ~S9HouseRules/spl/SPPR723.SPL~ ~override/S9PR723.SPL~				// Elemental Summoning
+	  SAY NAME1 @2023 SAY NAME2 @2023
+	BUT_ONLY
+
+	COPY ~S9HouseRules/spl/SPPR724.SPL~ ~override/S9PR724.SPL~				// Greater Elemental Summoning
+	  SAY NAME1 @2025 SAY NAME2 @2025
+	BUT_ONLY
+		
+	COPY ~S9HouseRules/spl/BHAAL1A.SPL~ ~override/S9AAL1A.SPL~				// Mass Heal
+	  SAY NAME1 @2026 SAY NAME2 @2026
+	BUT_ONLY
+
+	COPY_EXISTING ~SPCL909.SPL~ ~override/S9CL909.SPL~						// Tiger Strike aka Smite
+	  SAY NAME1 @2027 SAY NAME2 @2027
+	BUT_ONLY
+
+	COPY ~S9HouseRules/spl/S9CL930.SPL~ ~override~							// Extra Level 6 and 7 Spells
+		SAY NAME1 @2028 SAY NAME2 @2028
+	BUT_ONLY
+
+	COPY ~S9HouseRules/spl/S9CL931.SPL~ ~override~							// Extra Level 8 Spells
+		SAY NAME1 @3001 SAY NAME2 @3001
+	BUT_ONLY	
+		
+	COPY_EXISTING ~SPCL901.SPL~ ~override/S9CL901.SPL~						// Whirlwind Attack (Greater) 
+		SAY NAME1 @2029 SAY NAME2 @2029
+	BUT_ONLY	
+
+	COPY ~S9HouseRules/spl/SPPR730.SPL~ ~override/S9PR730D.spl~				// Aura of flaming death
+		SAY NAME1 @2030 SAY NAME2 @2030
+	BUT_ONLY		
+	
+	
+	// Gather class info into array
+	COPY_EXISTING ~kitlist.2da~ ~override~
+		COUNT_2DA_ROWS ~10~ "rows"
+			FOR ( index = 1 ; index < rows ; index = index + 1 ) BEGIN
+				READ_2DA_ENTRY %index% 5 10 s9clab
+				READ_2DA_ENTRY %index% 8 10 s9class
+				DEFINE_ASSOCIATIVE_ARRAY s9kit_clabs BEGIN "%s9clab%" => "%s9class%" END
+			END
+		PRETTY_PRINT_2DA
+		BUT_ONLY
+
+	// -----------------------FIGHTERS-----------------------
+	COPY_EXISTING ~CLABFI01.2da~ ~override~  //base class
+		LPM remove_blank_lines
+		APPEND_FILE ~S9HouseRules/misc/hla-warr.txt~ // fighter
+		BUT_ONLY
+
+	PRINT ~Setting Fighter Class and Kits...~
+		
+	ACTION_PHP_EACH s9kit_clabs AS foo => zoo BEGIN								
+		ACTION_IF (%zoo% = 2) AND (FILE_EXISTS_IN_GAME ~%foo%.2da~) THEN BEGIN 	// fighters
+			COPY_EXISTING ~%foo%.2DA~ ~override~
+				LPM remove_blank_lines
+				APPEND_FILE ~S9HouseRules/misc/hla-warr.txt~
+				PRETTY_PRINT_2DA	
+		BUT_ONLY
+		END
+	END
+
+	OUTER_SPRINT desc @2000  // Set help description on base class
+	LAF set_classtext_description STR_VAR kit = fighter desc END
+
+	// -----------------------PALADINS-----------------------
+	COPY_EXISTING ~CLABPA01.2da~ ~override~   //base class
+		LPM remove_blank_lines
+		APPEND_FILE ~S9HouseRules/misc/hla-pala.txt~
+		BUT_ONLY
+
+
+	PRINT ~Setting Paladin Class and Kits...~
+		
+	ACTION_PHP_EACH s9kit_clabs AS foo => zoo BEGIN
+		ACTION_IF (%zoo% = 6) AND (FILE_EXISTS_IN_GAME ~%foo%.2da~) THEN BEGIN
+			COPY_EXISTING ~%foo%.2DA~ ~override~
+				LPM remove_blank_lines
+				APPEND_FILE ~S9HouseRules/misc/hla-pala.txt~
+				PRETTY_PRINT_2DA	
+		BUT_ONLY
+		END
+	END
+
+	OUTER_SPRINT desc @2001  // Sets help description on base class
+	LAF set_classtext_description STR_VAR kit = PALADIN desc END
+
+	// -----------------------RANGER-------------------------
+	COPY_EXISTING ~CLABRN01.2da~ ~override~  //base class
+		LPM remove_blank_lines
+		APPEND_FILE ~S9HouseRules/misc/hla-rang.txt~
+		BUT_ONLY
+
+	// All Kits incl. mod additions if installed after mod kits
+	PRINT ~Setting Ranger Class and Kits...~
+
+	ACTION_PHP_EACH s9kit_clabs AS foo => zoo BEGIN
+		ACTION_IF (%zoo% = 12) AND (FILE_EXISTS_IN_GAME ~%foo%.2da~) THEN BEGIN
+			COPY_EXISTING ~%foo%.2DA~ ~override~
+				LPM remove_blank_lines
+				APPEND_FILE ~S9HouseRules/misc/hla-rang.txt~
+				PRETTY_PRINT_2DA	
+		BUT_ONLY
+		END
+	END
+
+	OUTER_SPRINT desc @2017 // Set Class help text additions
+
+	LAF set_classtext_description STR_VAR kit = RANGER desc END
+
+	// -----------------------THIEF--------------------------
+	COPY_EXISTING ~CLABTH01.2da~ ~override~  //base class
+		LPM remove_blank_lines
+		APPEND_FILE ~S9HouseRules/misc/hla-thie.txt~
+		BUT_ONLY
+
+	PRINT ~Setting Thief Class and Kits...~
+
+	ACTION_PHP_EACH s9kit_clabs AS foo => zoo BEGIN
+		ACTION_IF (%zoo% = 4) AND (FILE_EXISTS_IN_GAME ~%foo%.2da~) THEN BEGIN
+			COPY_EXISTING ~%foo%.2DA~ ~override~
+				LPM remove_blank_lines
+				APPEND_FILE ~S9HouseRules/misc/hla-thie.txt~
+				PRETTY_PRINT_2DA	
+		BUT_ONLY
+		END
+	END
+
+	OUTER_SPRINT desc @2010 // Set Class help text additions
+
+	LAF set_classtext_description STR_VAR kit = THIEF desc END
+
+	// -----------------------BARD---------------------------
+	COPY_EXISTING ~CLABBA01.2da~ ~override~  //base class
+		LPM remove_blank_lines
+		APPEND_FILE ~S9HouseRules/misc/hla-bard.txt~
+		BUT_ONLY
+
+	PRINT ~Setting Bard Class and Kits...~
+
+	ACTION_PHP_EACH s9kit_clabs AS foo => zoo BEGIN
+		ACTION_IF (%zoo% = 5) AND (FILE_EXISTS_IN_GAME ~%foo%.2da~) THEN BEGIN
+			COPY_EXISTING ~%foo%.2DA~ ~override~
+				LPM remove_blank_lines
+				APPEND_FILE ~S9HouseRules/misc/hla-bard.txt~
+				PRETTY_PRINT_2DA	
+		BUT_ONLY
+		END
+	END
+
+	OUTER_SPRINT desc @2011 // Set Class help text additions
+
+	LAF set_classtext_description STR_VAR kit = BARD desc END
+
+	// -----------------------CLERIC-------------------------
+	COPY_EXISTING ~CLABPR01.2da~ ~override~  //base class
+		LPM remove_blank_lines
+		APPEND_FILE ~S9HouseRules/misc/hla-cler.txt~
+		BUT_ONLY
+
+	// All Kits incl. mod additions if installed after mod kits
+	PRINT ~Setting Cleric Class and Kits...~
+
+	ACTION_PHP_EACH s9kit_clabs AS foo => zoo BEGIN
+		ACTION_IF (%zoo% = 3) AND (FILE_EXISTS_IN_GAME ~%foo%.2da~) THEN BEGIN
+			COPY_EXISTING ~%foo%.2DA~ ~override~
+				LPM remove_blank_lines
+				APPEND_FILE ~S9HouseRules/misc/hla-cler.txt~
+				PRETTY_PRINT_2DA	
+		BUT_ONLY
+		END
+	END
+
+	OUTER_SPRINT desc @2015 // Set Class help text additions
+
+	LAF set_classtext_description STR_VAR kit = CLERIC desc END
+
+	// -----------------------DRUID--------------------------
+	COPY_EXISTING ~CLABDR01.2da~ ~override~  //base class
+		LPM remove_blank_lines
+		APPEND_FILE ~S9HouseRules/misc/hla-drui.txt~
+		BUT_ONLY
+
+	// All Kits incl. mod additions if installed after mod kits
+	PRINT ~Setting Druid Class and Kits...~
+
+	ACTION_PHP_EACH s9kit_clabs AS foo => zoo BEGIN
+		ACTION_IF (%zoo% = 11) AND (FILE_EXISTS_IN_GAME ~%foo%.2da~) THEN BEGIN
+			COPY_EXISTING ~%foo%.2DA~ ~override~
+				LPM remove_blank_lines
+				APPEND_FILE ~S9HouseRules/misc/hla-drui.txt~
+				PRETTY_PRINT_2DA	
+		BUT_ONLY
+		END
+	END
+
+	OUTER_SPRINT desc @2016 // Set Class help text additions
+
+	LAF set_classtext_description STR_VAR kit = DRUID desc END
+
+	// -----------------------MONK---------------------------
+	COPY_EXISTING ~CLABMO01.2DA~ ~override~  //base class
+		LPM remove_blank_lines
+		APPEND_FILE ~S9HouseRules/misc/hla-monk.txt~
+		BUT_ONLY
+
+
+	// All Kits incl. mod additions if installed after mod kits
+	PRINT ~Setting Monk Class and Kits...~
+
+	ACTION_PHP_EACH s9kit_clabs AS foo => zoo BEGIN
+		ACTION_IF (%zoo% = 20) AND (FILE_EXISTS_IN_GAME ~%foo%.2da~) THEN BEGIN
+			COPY_EXISTING ~%foo%.2DA~ ~override~
+				LPM remove_blank_lines
+				APPEND_FILE ~S9HouseRules/misc/hla-monk.txt~
+				PRETTY_PRINT_2DA	
+		BUT_ONLY
+		END
+	END
+
+	OUTER_SPRINT desc @2018 // Set Class help text additions
+
+	LAF set_classtext_description STR_VAR kit = MONK desc END
+
+	// -----------------------WIZARD AND SORCEROR------------
+
+	PRINT ~Setting Arcane (Wizard and Sorceror) Class and Kits...~
+
+	/*  Wizards CLAB files may not exist.  If they do, we'll add the .txt;
+	 if not, we'll create them ourselves, and then add the wizard .txt file  */
+
+	ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA01.2da~ THEN BEGIN // mage
+		COPY_EXISTING ~CLABMA01.2da~ ~override~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	ACTION_IF NOT FILE_EXISTS_IN_GAME ~CLABMA01.2da~ THEN BEGIN
+		COPY ~S9HouseRules/misc/CLABMAGE.2da~ ~override/CLABMA01.2da~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA02.2da~ THEN BEGIN // abjurer
+		COPY_EXISTING ~CLABMA02.2da~ ~override~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	ACTION_IF NOT FILE_EXISTS_IN_GAME ~CLABMA02.2da~ THEN BEGIN
+		COPY ~S9HouseRules/misc/CLABMAGE.2da~ ~override/CLABMA01.2da~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA03.2da~ THEN BEGIN // necromancer
+		COPY_EXISTING ~CLABMA03.2da~ ~override~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	ACTION_IF NOT FILE_EXISTS_IN_GAME ~CLABMA03.2da~ THEN BEGIN
+		COPY ~S9HouseRules/misc/CLABMAGE.2da~ ~override/CLABMA01.2da~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA04.2da~ THEN BEGIN // transmuter
+		COPY_EXISTING ~CLABMA04.2da~ ~override~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	ACTION_IF NOT FILE_EXISTS_IN_GAME ~CLABMA04.2da~ THEN BEGIN
+		COPY ~S9HouseRules/misc/CLABMAGE.2da~ ~override/CLABMA01.2da~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA05.2da~ THEN BEGIN // diviner
+		COPY_EXISTING ~CLABMA05.2da~ ~override~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	ACTION_IF NOT FILE_EXISTS_IN_GAME ~CLABMA05.2da~ THEN BEGIN
+		COPY ~S9HouseRules/misc/CLABMAGE.2da~ ~override/CLABMA01.2da~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA06.2da~ THEN BEGIN // conjurer
+		COPY_EXISTING ~CLABMA06.2da~ ~override~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	ACTION_IF NOT FILE_EXISTS_IN_GAME ~CLABMA06.2da~ THEN BEGIN
+		COPY ~S9HouseRules/misc/CLABMAGE.2da~ ~override/CLABMA01.2da~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA07.2da~ THEN BEGIN // invoker
+		COPY_EXISTING ~CLABMA07.2da~ ~override~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	ACTION_IF NOT FILE_EXISTS_IN_GAME ~CLABMA07.2da~ THEN BEGIN
+		COPY ~S9HouseRules/misc/CLABMAGE.2da~ ~override/CLABMA01.2da~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA08.2da~ THEN BEGIN // illusionist
+		COPY_EXISTING ~CLABMA08.2da~ ~override~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	ACTION_IF NOT FILE_EXISTS_IN_GAME ~CLABMA08.2da~ THEN BEGIN
+		COPY ~S9HouseRules/misc/CLABMAGE.2da~ ~override/CLABMA01.2da~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA09.2da~ THEN BEGIN // enchanter
+		COPY_EXISTING ~CLABMA09.2da~ ~override~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	ACTION_IF NOT FILE_EXISTS_IN_GAME ~CLABMA09.2da~ THEN BEGIN
+		COPY ~S9HouseRules/misc/CLABMAGE.2da~ ~override/CLABMA01.2da~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+		END
+	COPY_EXISTING ~CLABSO01.2da~ ~override~ //    sorcerer
+		LPM remove_blank_lines
+		APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+		BUT_ONLY
+
+	// Mod compatibility for Sorcerors and Wizards
+
+	ACTION_IF (%zoo% = 1) AND (FILE_EXISTS_IN_GAME ~%foo%.2da~) THEN BEGIN // wizards
+		COPY_EXISTING ~%foo%.2DA~ ~override~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+	END
+
+	ACTION_IF (%zoo% = 19) AND (FILE_EXISTS_IN_GAME ~%foo%.2da~) THEN BEGIN // sorcerers
+		COPY_EXISTING ~%foo%.2DA~ ~override~
+			LPM remove_blank_lines
+			APPEND_FILE ~S9HouseRules/misc/hla-wiza.txt~
+			BUT_ONLY
+	END	
+		
+	OUTER_SPRINT desc @2019 
+
+	// Set Class help text additions for mage and sorc,
+	// ! There seems to be an engine bug in game on Mage description during character creation but not during the game (check kit description)
+	// This bug clears up if you reclick on the mage name, really odd.
+
+	LAF set_classtext_description STR_VAR kit = MAGE desc END
+	LAF set_classtext_description STR_VAR kit = SORCERER desc END
+
+//
+// Kit Tomes for IWDEE
+//	
+	
+BEGIN @200 DESIGNATED 200
+GROUP @201
+	COPY ~S9HouseRules/EFF/S9SPWI01.EFF~ ~override/S9SPWI01.EFF~
+	
+	//The Invisibile Creature & his script
+	COPY ~S9HouseRules/CRE/S9KTAdd.cre~ ~override~
+	COMPILE ~S9HouseRules/baf/S9KTAdd.baf~ ~override~
+	
+	//Panver                                      
+	COMPILE EVALUATE_BUFFER ~S9HouseRules/dlg/s9Panver.d~	
+	COPY ~S9HouseRules/bmp/s9panver.bmp~ ~override/s9panver.bmp~
+	COPY ~S9HouseRules/snd/GORIN14.WAV~ ~override/GORIN14.WAV~	// Panver's soundfile is from BG and needs to be added to IWDEE/BG2EE			
+				
+	COPY ~S9HouseRules/CRE/s9PANVER.CRE~ ~override/s9PANVER.cre~
+	  SAY 0x8 @3200
+	  SAY 0xC @3200 
+
+	EXTEND_BOTTOM ~AR2111.bcs~ ~S9HouseRules/baf/panver4.baf~  // Place Panver in the Root Cellar Tavern of Kuldahar	
+	
+	//--------------------------------------------
+	//Create Tomes; adds current descriptions of classes to them
+	//================================================================
+	//Thank you to Mike1072 @ http://forums.gibberlings3.net/ for this code
+
+	COPY_EXISTING ~kitlist.2da~ ~override~
+		READ_2DA_ENTRIES_NOW ~r2en_kitlist~ 9
+		FOR (row = 1; row < r2en_kitlist; row += 1) BEGIN
+				READ_2DA_ENTRY_FORMER ~r2en_kitlist~ row 1 kit
+				READ_2DA_ENTRY_FORMER ~r2en_kitlist~ row 4 description		
+				PATCH_IF (IS_AN_INT description) BEGIN
+					SET $description(~%kit%~) = description
+					END
+				END	
+	BUT_ONLY
+	PRINT ~Read %r2en_kitlist% kits from kitlist.2da~	
+		
+	//																	  
+	//	STORE 1 Kit Tomes								  		 		  
+	//																	  
+	//	Fighters =------------------------------------------------------------------------------------------------
+	// Barbarian (fighter kit according to the BG2 engine)
+	COPY ~S9HouseRules/itm/s9tome01.itm~ ~override/s9tome31.itm~
+		SAY NAME1 @3000
+		SAY NAME2 @3131
+		WRITE_LONG DESC $description(~BARBARIAN~)
+		SAY UNIDENTIFIED_DESC @3002
+		SAY 0xde @3003
+		READ_BYTE 0x18 fl //Flags
+		WRITE_BYTE 0x18 (fl BOR 0b00000001) //Unsellable    
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 // 1 is 'self'
+		parameter1 = 31
+		timing = 1 // instant
+	STR_VAR
+		resource = S9KITTOM // global variable
+	END
+
+	//Berserker
+	COPY ~S9HouseRules/itm/S9tome01.itm~ ~override/S9tome01.itm~
+	  SAY NAME1 @3000
+	  SAY NAME2 @3101
+	  WRITE_LONG DESC $description(~BERSERKER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 1 
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//Wizard Slayer
+	COPY ~S9HouseRules/itm/S9tome01.itm~ ~override/S9tome02.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3102
+	  WRITE_LONG DESC $description(~WIZARD_SLAYER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003 
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 2 
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+	  
+	//Kensai
+	COPY ~S9HouseRules/itm/S9tome01.itm~ ~override/S9tome03.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3103
+	  WRITE_LONG DESC $description(~KENSAI~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 3 
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//	Paladins =------------------------------------------------------------------------------------------------
+	// Cavalier
+	COPY ~S9HouseRules/itm/S9tome04.itm~ ~override/S9tome04.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3104
+	  WRITE_LONG DESC $description(~CAVALIER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 4
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	// Inquisitor
+	COPY ~S9HouseRules/itm/S9tome04.itm~ ~override/S9tome05.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3105
+	  WRITE_LONG DESC $description(~INQUISITOR~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 5 
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	// Undead Hunter
+	COPY ~S9HouseRules/itm/S9tome04.itm~ ~override/S9tome06.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3106
+	  WRITE_LONG DESC $description(~UNDEAD_HUNTER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 6 
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//	Rangers =------------------------------------------------------------------------------------------------
+	// Archer
+	COPY ~S9HouseRules/itm/S9tome07.itm~ ~override/S9tome07.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3107
+	  WRITE_LONG DESC $description(~FERALAN~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 7
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	// Stalker
+	COPY ~S9HouseRules/itm/S9tome07.itm~ ~override/S9tome08.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3108
+	  WRITE_LONG DESC $description(~STALKER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 8
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+	  
+	//Beast Master
+	COPY ~S9HouseRules/itm/S9tome07.itm~ ~override/S9tome09.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3109
+	  WRITE_LONG DESC $description(~BEASTMASTER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 9
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//	Druids =------------------------------------------------------------------------------------------------
+	//Totemic Druid
+	COPY ~S9HouseRules/itm/S9tome16.itm~ ~override/S9tome16.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3116
+	  WRITE_LONG DESC $description(~TOTEMIC_DRUID~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 16
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	// Shapeshifter
+	COPY ~S9HouseRules/itm/S9tome16.itm~ ~override/s9tome17.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3117
+	  WRITE_LONG DESC $description(~SHAPESHIFTER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 17
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//Avenger aka BEAST_FRIEND
+	COPY ~S9HouseRules/itm/S9tome16.itm~ ~override/s9tome18.itm~  
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3118
+	  WRITE_LONG DESC $description(~BEAST_FRIEND~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 18 
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//	Clerics =------------------------------------------------------------------------------------------------ 
+	//Talos
+	COPY ~S9HouseRules/itm/s9tome19.itm~ ~override/s9tome19.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3119
+	  WRITE_LONG DESC $description(~TALOS~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 19
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//Helm
+	COPY ~S9HouseRules/itm/s9tome19.itm~ ~override/s9tome20.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3120
+	  WRITE_LONG DESC $description(~HELM~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 20
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//Lathander
+	COPY ~S9HouseRules/itm/s9tome19.itm~ ~override/s9tome21.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3121
+	  WRITE_LONG DESC $description(~LATHANDER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 21 
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//	Mages =------------------------------------------------------------------------------------------------
+	//Abjurer
+	COPY ~S9HouseRules/itm/s9tome22.itm~ ~override/s9tome22.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3122
+	  WRITE_LONG DESC $description(~ABJURER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 22
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//Conjurer
+	COPY ~S9HouseRules/itm/s9tome22.itm~ ~override/s9tome23.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3123
+	  WRITE_LONG DESC $description(~CONJURER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 23
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//Diviner
+	COPY ~S9HouseRules/itm/s9tome22.itm~ ~override/s9tome24.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3124
+	  WRITE_LONG DESC $description(~DIVINER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 24
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//Enchanter
+	COPY ~S9HouseRules/itm/s9tome22.itm~ ~override/s9tome25.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3125
+	  WRITE_LONG DESC $description(~ENCHANTER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 25
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//Illusionist
+	COPY ~S9HouseRules/itm/s9tome22.itm~ ~override/s9tome26.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3126
+	  WRITE_LONG DESC $description(~ILLUSIONIST~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 26
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//Invoker
+	COPY ~S9HouseRules/itm/s9tome22.itm~ ~override/s9tome27.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3127
+	  WRITE_LONG DESC $description(~INVOKER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 27
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//Necromancer
+	COPY ~S9HouseRules/itm/s9tome22.itm~ ~override/s9tome28.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3128
+	  WRITE_LONG DESC $description(~NECROMANCER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 28
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//Transmuter
+	COPY ~S9HouseRules/itm/s9tome22.itm~ ~override/s9tome29.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3129
+	  WRITE_LONG DESC $description(~TRANSMUTER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 29
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//Wildmage
+	COPY ~S9HouseRules/itm/s9tome22.itm~ ~override/s9tome30.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3130
+	  WRITE_LONG DESC $description(~WILDMAGE~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 30
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//																	  
+	//	STORE 2 Kit Tomes								  		 		  
+	//	These classes/kits likely to lead to inconsistent results         
+	//  with skill points and lore points                                 
+	//																	  
+
+	//	Thieves =------------------------------------------------------------------------------------------------
+	//Assasin
+	COPY ~S9HouseRules/itm/S9tome10.itm~ ~override/S9tome10.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3110
+	  WRITE_LONG DESC $description(~ASSASIN~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001) 
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 10
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//Bounty Hunter
+	COPY ~S9HouseRules/itm/S9tome10.itm~ ~override/S9tome11.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3111
+	  WRITE_LONG DESC $description(~BOUNTY_HUNTER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 11
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//Swashbuckler
+	COPY ~S9HouseRules/itm/S9tome10.itm~ ~override/S9tome12.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3112
+	  WRITE_LONG DESC $description(~SWASHBUCKLER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 12
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//	Bards =------------------------------------------------------------------------------------------------
+	//Blade
+	COPY ~S9HouseRules/itm/S9tome13.itm~ ~override/S9tome13.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3113
+	  WRITE_LONG DESC $description(~BLADE~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 13
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//Jester
+	COPY ~S9HouseRules/itm/S9tome13.itm~ ~override/S9tome14.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3114
+	  WRITE_LONG DESC $description(~JESTER~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 14
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//Skald
+	COPY ~S9HouseRules/itm/S9tome13.itm~ ~override/S9tome15.itm~
+	  SAY NAME1 @3000 
+	  SAY NAME2 @3115
+	  WRITE_LONG DESC $description(~SKALD~)
+	  SAY UNIDENTIFIED_DESC @3002
+	  SAY 0xde @3003
+	  READ_BYTE 0x18 fl 
+	  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+		LPF ADD_ITEM_EFFECT
+	INT_VAR
+		opcode = 265
+		target = 1 
+		parameter1 = 15
+		timing = 1 
+	STR_VAR
+		resource = S9KITTOM 
+	END
+
+	//--------------------------------------------------------------------
+	//																	  
+	//BGEE & BG2EE & IWDEE Specific Kits                                  
+	//																	  
+	//--------------------------------------------------------------------
+
+	ACTION_IF GAME_IS ~bgee bg2ee iwdee~ THEN BEGIN  //BGEE & BG2EE & IWDEE Specific Kits
+		// Blackguard
+		COPY ~S9HouseRules/itm/S9tome04.itm~ ~override/S9tome32.itm~
+		  SAY NAME1 @3000 
+		  SAY NAME2 @3132
+		  WRITE_LONG DESC $description(~Blackguard~)
+		  SAY UNIDENTIFIED_DESC @3002
+		  SAY 0xde @3003
+		  READ_BYTE 0x18 fl 
+		  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+			LPF ADD_ITEM_EFFECT
+		INT_VAR
+			opcode = 265
+			target = 1 
+			parameter1 = 32
+			timing = 1 
+		STR_VAR
+			resource = S9KITTOM 
+		END
+
+		//SHADOWDANCER
+		COPY ~S9HouseRules/itm/S9tome10.itm~ ~override/S9tome33.itm~
+		  SAY NAME1 @3000 
+		  SAY NAME2 @3133
+		  WRITE_LONG DESC $description(~SHADOWDANCER~)
+		  SAY UNIDENTIFIED_DESC @3002
+		  SAY 0xde @3003
+		  READ_BYTE 0x18 fl 
+		  WRITE_BYTE 0x18 (fl BOR 0b00000001) 
+			LPF ADD_ITEM_EFFECT
+		INT_VAR
+			opcode = 265
+			target = 1 
+			parameter1 = 33
+			timing = 1 
+		STR_VAR
+			resource = S9KITTOM 
+		END
+
+		//DWARVEN_DEFENDER
+		COPY ~S9HouseRules/itm/s9tome34.itm~ ~override/s9tome34.itm~
+		  SAY NAME1 @3000
+		  SAY NAME2 @3134
+		  WRITE_LONG DESC $description(~DWARVEN_DEFENDER~)
+		  SAY UNIDENTIFIED_DESC @3002
+		  SAY 0xde @3003
+		  READ_BYTE 0x18 fl 
+		  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+			LPF ADD_ITEM_EFFECT
+		INT_VAR
+			opcode = 265
+			target = 1 
+			parameter1 = 34
+			timing = 1 
+		STR_VAR
+			resource = S9KITTOM 
+		END
+		
+		//DRAGON_DISCIPLE
+		COPY ~S9HouseRules/itm/s9tome22.itm~ ~override/s9tome35.itm~
+		  SAY NAME1 @3000 
+		  SAY NAME2 @3135
+		  WRITE_LONG DESC $description(~DRAGON_DISCIPLE~)
+		  SAY UNIDENTIFIED_DESC @3002
+		  SAY 0xde @3003
+		  READ_BYTE 0x18 fl 
+		  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+			LPF ADD_ITEM_EFFECT
+		INT_VAR
+			opcode = 265
+			target = 1 
+			parameter1 = 35
+			timing = 1 
+		STR_VAR
+			resource = S9KITTOM 
+		END	
+		
+		//DARK_MOON Monk
+		COPY ~S9HouseRules/itm/s9tome36.itm~ ~override/s9tome36.itm~
+		  SAY NAME1 @3000 
+		  SAY NAME2 @3136
+		  WRITE_LONG DESC $description(~DARK_MOON~)
+		  SAY UNIDENTIFIED_DESC @3002
+		  SAY 0xde @3003
+		  READ_BYTE 0x18 fl 
+		  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+			LPF ADD_ITEM_EFFECT
+		INT_VAR
+			opcode = 265
+			target = 1 
+			parameter1 = 36
+			timing = 1 
+		STR_VAR
+			resource = S9KITTOM 
+		END	
+
+		//Sun Soul Monk
+		COPY ~S9HouseRules/itm/s9tome36.itm~ ~override/s9tome37.itm~
+		  SAY NAME1 @3000 
+		  SAY NAME2 @3137
+		  WRITE_LONG DESC $description(~SUN_SOUL~)
+		  SAY UNIDENTIFIED_DESC @3002
+		  SAY 0xde @3003
+		  READ_BYTE 0x18 fl 
+		  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+			LPF ADD_ITEM_EFFECT
+		INT_VAR
+			opcode = 265
+			target = 1 
+			parameter1 = 37
+			timing = 1 
+		STR_VAR
+			resource = S9KITTOM 
+		END			
+	END									//BGEE & BG2EE & IWDEE Specific Kits END
+			  
+	//IWDEE Specific Kits                                        		  
+	//--------------------------------------------------------------------
+
+	ACTION_IF GAME_IS ~iwdee~ THEN BEGIN  //IWDEE Specific Kits
+		//Priest of Tyr
+		COPY ~S9HouseRules/itm/S9tome19.itm~ ~override/S9tome40.itm~
+		  SAY NAME1 @3000 
+		  SAY NAME2 @3140
+		  WRITE_LONG DESC $description(~OHTYR~)
+		  SAY UNIDENTIFIED_DESC @3002
+		  SAY 0xde @3003
+		  READ_BYTE 0x18 fl 
+		  WRITE_BYTE 0x18 (fl BOR 0b00000001) 
+			LPF ADD_ITEM_EFFECT
+		INT_VAR
+			opcode = 265
+			target = 1 
+			parameter1 = 40
+			timing = 1 
+		STR_VAR
+			resource = S9KITTOM 
+		END
+
+		//Priest of Tempus
+		COPY ~S9HouseRules/itm/s9tome19.itm~ ~override/s9tome41.itm~
+		  SAY NAME1 @3000
+		  SAY NAME2 @3141
+		  WRITE_LONG DESC $description(~OHTEMPUS~)
+		  SAY UNIDENTIFIED_DESC @3002
+		  SAY 0xde @3003
+		  READ_BYTE 0x18 fl 
+		  WRITE_BYTE 0x18 (fl BOR 0b00000001)     
+			LPF ADD_ITEM_EFFECT
+		INT_VAR
+			opcode = 265
+			target = 1 
+			parameter1 = 41
+			timing = 1 
+		STR_VAR
+			resource = S9KITTOM 
+		END		
+	END
+	  
+	//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+	// Tome Stores: Create and populate them                                                             
+	//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+	ACTION_IF GAME_IS ~iwdee~ THEN BEGIN  								//IWDEE Specific
+		DEFINE_ACTION_FUNCTION patch_sto INT_VAR quantity = 1 BEGIN
+			COPY ~S9HouseRules/sto/s9panver.sto~ ~override/s9panver.sto~
+				SAY 0xC @202
+				PATCH_FOR_EACH tome IN s9tome37 s9tome36 s9tome35 s9tome30 s9tome29 s9tome28 s9tome27 s9tome26 s9tome25 s9tome24 s9tome23 s9tome22 s9tome40 s9tome41 s9tome21 s9tome20 s9tome19 s9tome18 s9tome17 s9tome16 s9tome09 s9tome08 s9tome07 s9tome32 s9tome06 s9tome05 s9tome04 s9tome03 s9tome02 s9tome34 s9tome01 s9tome31
+				BEGIN ADD_STORE_ITEM "%tome%" #1 #0 #0 ~IDENTIFIED~ (quantity)
+			END
+			BUT_ONLY
+
+			COPY ~S9HouseRules/sto/s9panves.sto~ ~override/s9panves.sto~
+				SAY 0xC @203
+				PATCH_FOR_EACH tome IN s9tome15 s9tome14 s9tome13 s9tome33 s9tome12 s9tome11 s9tome10
+				BEGIN ADD_STORE_ITEM "%tome%" #1 #0 #0 ~IDENTIFIED~ (quantity)
+			END
+			BUT_ONLY			
+		END
+	END
+
+	//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+	// OPTIONAL COMPONENTS: Number of items in stock in tome store                                      
+	//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+	BEGIN @3206
+	SUBCOMPONENT @3205
+	GROUP @201
+	REQUIRE_COMPONENT ~Setup-S9HouseRules.tp2~ 200 @2
+		OUTER_SET quantity = 1
+		LAF patch_sto INT_VAR quantity 
+	END
+
+	BEGIN @3207
+	SUBCOMPONENT @3205
+	GROUP @201
+	REQUIRE_COMPONENT ~Setup-S9HouseRules.tp2~ 200 @2
+		OUTER_SET quantity = 2
+		LAF patch_sto INT_VAR quantity 
+	END
+
+	BEGIN @3208
+	SUBCOMPONENT @3205
+	GROUP @201
+	REQUIRE_COMPONENT ~Setup-S9HouseRules.tp2~ 200 @2
+		OUTER_SET quantity = 6
+		LAF patch_sto INT_VAR quantity 
+	END
+
+	BEGIN @3210
+	SUBCOMPONENT @3205
+	GROUP @201
+	REQUIRE_COMPONENT ~Setup-S9HouseRules.tp2~ 200 @2
+		OUTER_SET quantity = 10
+		LAF patch_sto INT_VAR quantity 
+	END
+	

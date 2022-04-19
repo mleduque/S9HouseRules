@@ -1,0 +1,9 @@
+If you look at the 'hla-figh.txt' file in the 'misc' directory, it has bits in the 15th and 25th columns that will give a player SPCL900 (Whirlwind) and SPCL901 (Greater Whirlwind), at 15th and 25th levels. 
+
+You can easily change the HLAs by simply replacing SPCL900 with some other ability file.  You can change what levels they appear at by moving them to different columns.  
+You can add more abilities at different levels by add new GA_xxxxxx lines in different columns.  Just remember that each column is 12 characters long: [4 stars plus 8 spaces], or ["GA_" plus the .spl file plus 2 spaces].
+
+What the .tp2 file is doing here is simply adding the text from that file to the fighter kits' CLABxxx.2da files, so that the abilities are granted to a player upon level-up just like Berserker Rage or Archer Called Shot etc.
+
+Copy/duplicate that file and call the copy something else, like 'hla-thie.txt', and switch the abilities to thief HLAs.  And again for the other classes.
+Then go into the .tp2 file and fill in the file names of the new text files in the appropriate places for those classes.  The code is commented so that it hopefully is easy to follow.

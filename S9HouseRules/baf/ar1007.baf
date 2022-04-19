@@ -1,0 +1,10 @@
+IF
+	Global("S9HouseRules_EHPOMAB","GLOBAL",0)
+THEN
+	RESPONSE #100
+		AddStoreItem("EHPOMAB","bag05",1,1)
+		AddStoreItem("EHPOMAB","s9quiv01",10,1)
+		AddStoreItem("EHPOMAB","s9quiv02",10,1)
+		AddStoreItem("EHPOMAB","s9quiv05",10,1)
+		SetGlobal("S9HouseRules_EHPOMAB","GLOBAL",1)
+END
