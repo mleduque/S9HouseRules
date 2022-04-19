@@ -5,7 +5,9 @@ Author: Smeagolheart - Version: 1.1
 
 
 > This file (README.md) is not part of the original mod;it was converted from README.htm
+> 
 > mod home: http://www.shsforums.net/files/file/1101-house-rules-for-iwdee-iwdee-tweak-pack/
+> 
 > beamdog forum thread: https://forums.beamdog.com/discussion/37290/house-rules-for-iwd-ee-iwdee-tweaks
 
 [Introduction](https://github.com/mleduque/S9HouseRules/blob/main/README.md#introduction)
