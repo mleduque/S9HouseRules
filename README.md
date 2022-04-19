@@ -10,21 +10,19 @@ Author: Smeagolheart - Version: 1.1
 > 
 > beamdog forum thread: https://forums.beamdog.com/discussion/37290/house-rules-for-iwd-ee-iwdee-tweaks
 
-[Introduction](https://github.com/mleduque/S9HouseRules/blob/main/README.md#introduction)
-
-[Compatibility notes](https://github.com/mleduque/S9HouseRules/edit/main/README.md#compatibility-notes)
-
-[Components](https://github.com/mleduque/S9HouseRules/edit/main/README.md#components)
-
-[FAQ](https://github.com/mleduque/S9HouseRules/edit/main/README.md#frequently-asked-questions)
-
-[Version history](https://github.com/mleduque/S9HouseRules/edit/main/README.md#version-history)
-
-[Credits](https://github.com/mleduque/S9HouseRules/edit/main/README.md#credits)
-
-[Legal Notice](https://github.com/mleduque/S9HouseRules/edit/main/README.md#legal-notice)
-
-[Contact info](https://github.com/mleduque/S9HouseRules/edit/main/README.md#contact-info)
+## Contents
+- [Introduction](https://github.com/mleduque/S9HouseRules/blob/main/README.md#introduction)
+- [Compatibility notes](https://github.com/mleduque/S9HouseRules/edit/main/README.md#compatibility-notes)
+- [Components](https://github.com/mleduque/S9HouseRules/edit/main/README.md#components)
+  * [Reveal City Maps](https://github.com/mleduque/S9HouseRules#reveal-city-maps) 
+  * [Items](https://github.com/mleduque/S9HouseRules#items) 
+  * [Class HLA](https://github.com/mleduque/S9HouseRules#class-hla) 
+  * [Kit Tomes](https://github.com/mleduque/S9HouseRules#kit-tomes) 
+- [FAQ](https://github.com/mleduque/S9HouseRules/edit/main/README.md#frequently-asked-questions)
+- [Version history](https://github.com/mleduque/S9HouseRules/edit/main/README.md#version-history)
+- [Credits](https://github.com/mleduque/S9HouseRules/edit/main/README.md#credits)
+- [Legal Notice](https://github.com/mleduque/S9HouseRules/edit/main/README.md#legal-notice)
+- [Contact info](https://github.com/mleduque/S9HouseRules/edit/main/README.md#contact-info)
 
 ## Introduction
 HOUSE RULE. : a rule (as in a game) that applies only among a certain group or in a certain place.
