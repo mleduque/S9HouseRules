@@ -8,21 +8,21 @@ Author: Smeagolheart - Version: 1.1
 > mod home: http://www.shsforums.net/files/file/1101-house-rules-for-iwdee-iwdee-tweak-pack/
 > beamdog forum thread: https://forums.beamdog.com/discussion/37290/house-rules-for-iwd-ee-iwdee-tweaks
 
-Introduction
+[Introduction](https://github.com/mleduque/S9HouseRules/blob/main/README.md#introduction)
 
-Compatibility notes
+[Compatibility notes](https://github.com/mleduque/S9HouseRules/edit/main/README.md#compatibility-notes)
 
-Components
+[Components](https://github.com/mleduque/S9HouseRules/edit/main/README.md#components)
 
-FAQ
+[FAQ](https://github.com/mleduque/S9HouseRules/edit/main/README.md#frequently-asked-questions)
 
-Version history
+[Version history](https://github.com/mleduque/S9HouseRules/edit/main/README.md#version-history)
 
-Credits
+[Credits](https://github.com/mleduque/S9HouseRules/edit/main/README.md#credits)
 
-Legal Notice
+[Legal Notice](https://github.com/mleduque/S9HouseRules/edit/main/README.md#legal-notice)
 
-Contact info
+[Contact info](https://github.com/mleduque/S9HouseRules/edit/main/README.md#contact-info)
 
 ## Introduction
 HOUSE RULE. : a rule (as in a game) that applies only among a certain group or in a certain place.
