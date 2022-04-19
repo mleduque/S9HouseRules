@@ -9,16 +9,24 @@ Author: Smeagolheart - Version: 1.1
 > beamdog forum thread: https://forums.beamdog.com/discussion/37290/house-rules-for-iwd-ee-iwdee-tweaks
 
 Introduction
+
 Compatibility notes
+
 Components
+
 FAQ
+
 Version history
+
 Credits
+
 Legal Notice
+
 Contact info
 
 ## Introduction
 HOUSE RULE. : a rule (as in a game) that applies only among a certain group or in a certain place.
+
 This mod represents a compilation of various house rules and tweaks which are designed to change certain aspects of the game. It works on Icewind Dale Enhanced Edition. The mod is divided into multiple components all of which can be installed separately and are completely independent of each other. Classic Tabletop D&D players embraced house rules. 1st edition D&D had a rule that demihumans could not advance past certain levels. once your immortal elf reached a certain level, he stopped advancing while a human could keep on leveling. As one might imagine, this was one of the first rules to be modified by our tabletop playing predecessors. After all the rules are like guidelines, man. Tweak them how you to and play the game you want to play. This mod may expand its scope in the FUTURE; after all there is always the opportunity for more house rules. Enjoy, Mark G. (Smeagolheart)
 
 ## Compatibility notes
